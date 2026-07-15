@@ -1,0 +1,24 @@
+[submodule "references/theniceboy-config"]
+	path = references/theniceboy-config
+	url = https://github.com/theniceboy/.config.git
+[submodule "references/ANRlm-dotfiles"]
+	path = references/ANRlm-dotfiles
+	url = https://github.com/ANRlm/dotfiles.git
+[submodule "references/for13to1-dotfiles"]
+	path = references/for13to1-dotfiles
+	url = https://github.com/for13to1/dotfiles.git
+[submodule "references/wsgggws-dotfiles"]
+	path = references/wsgggws-dotfiles
+	url = https://github.com/wsgggws/dotfiles.git
+[submodule "references/zeinsshiri1984-ApexDotfiles"]
+	path = references/zeinsshiri1984-ApexDotfiles
+	url = https://github.com/zeinsshiri1984/ApexDotfiles.git
+[submodule "references/lewislulu-terminal-setup"]
+	path = references/lewislulu-terminal-setup
+	url = https://github.com/lewislulu/terminal-setup.git
+[submodule "references/signalridge-dotfiles"]
+	path = references/signalridge-dotfiles
+	url = https://github.com/signalridge/dotfiles.git
+[submodule "references/insv23-dotfiles"]
+	path = references/insv23-dotfiles
+	url = https://github.com/insv23/dotfiles.git
