@@ -1,0 +1,12 @@
+# Version control metadata
+.git/
+.gitignore
+.gitmodules
+
+# Repository-only files
+README.md
+docs/
+tests/
+
+# Reference repositories
+references/
