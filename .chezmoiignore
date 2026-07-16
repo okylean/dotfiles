@@ -6,6 +6,7 @@
 # Repository-only files
 README.md
 docs/
+init.sh
 tests/
 
 # Reference repositories
