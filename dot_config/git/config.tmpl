@@ -3,6 +3,11 @@
 	email = okylean@gmail.com
 	useConfigOnly = true
 
+{{ if and (hasKey . "workGitEnabled") .workGitEnabled }}
+[includeIf "gitdir:~/Work/"]
+	path = ~/.config/git/config-work
+{{ end }}
+
 [init]
 	defaultBranch = main
 

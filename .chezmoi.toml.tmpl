@@ -1,3 +1,32 @@
-# Chezmoi configuration template.
-# Keep this file intentionally minimal until repository-wide Chezmoi options
-# are defined.
+{{- $workGitEnabled := false -}}
+{{- if hasKey . "workGitEnabled" -}}
+{{-   $workGitEnabled = .workGitEnabled -}}
+{{- else if stdinIsATTY -}}
+{{-   $workGitEnabled = promptBoolOnce . "workGitEnabled" "Configure work Git identity" -}}
+{{- else -}}
+{{-   fail "workGitEnabled is unset and there is no TTY to prompt. Run init interactively or pre-populate Chezmoi data." -}}
+{{- end -}}
+
+{{- $workGitName := "" -}}
+{{- $workGitEmail := "" -}}
+{{- if $workGitEnabled -}}
+{{-   if and (hasKey . "workGitName") (ne .workGitName "") -}}
+{{-     $workGitName = .workGitName -}}
+{{-   else if stdinIsATTY -}}
+{{-     $workGitName = promptStringOnce . "workGitName" "Work Git name" -}}
+{{-   else -}}
+{{-     fail "workGitName is unset and there is no TTY to prompt. Run init interactively or pre-populate Chezmoi data." -}}
+{{-   end -}}
+{{-   if and (hasKey . "workGitEmail") (ne .workGitEmail "") -}}
+{{-     $workGitEmail = .workGitEmail -}}
+{{-   else if stdinIsATTY -}}
+{{-     $workGitEmail = promptStringOnce . "workGitEmail" "Work Git email" -}}
+{{-   else -}}
+{{-     fail "workGitEmail is unset and there is no TTY to prompt. Run init interactively or pre-populate Chezmoi data." -}}
+{{-   end -}}
+{{- end -}}
+
+[data]
+workGitEnabled = {{ $workGitEnabled }}
+workGitName = {{ $workGitName | quote }}
+workGitEmail = {{ $workGitEmail | quote }}

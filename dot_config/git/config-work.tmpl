@@ -1,0 +1,8 @@
+{{- if and (hasKey . "workGitEnabled") .workGitEnabled }}
+{{- if or (eq .workGitName "") (eq .workGitEmail "") }}
+{{- fail "workGitEnabled is true but workGitName or workGitEmail is empty; update Chezmoi data before applying" }}
+{{- end }}
+[user]
+	name = {{ .workGitName }}
+	email = {{ .workGitEmail }}
+{{- end }}
